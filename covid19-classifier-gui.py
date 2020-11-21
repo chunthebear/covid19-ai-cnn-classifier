@@ -1,9 +1,6 @@
 
 # coding: utf-8
 
-# In[17]:
-
-
 # Author: Yichun Zhao
 
 import tensorflow as tf
@@ -17,20 +14,11 @@ import cv2
 import tkinter as tk
 import tkinter.filedialog as fd
 
-
-# In[18]:
-
-
 # load keras model
 model_loaded = keras.models.load_model(os.path.abspath('')+"/model")
 
-
-# In[ ]:
-
-
 root = tk.Tk()
 root.withdraw()
-
 file_path = fd.askopenfilename()
 
 #image = cv2.imread(os.path.abspath('')+"/dataset/evaluate/yes/000001-13.jpg", cv2.IMREAD_GRAYSCALE)
@@ -43,4 +31,3 @@ if (output):
     print("\nCOVID19 detected.\n")
 else:
     print("\nCOVID19 not detected.\n")
-
