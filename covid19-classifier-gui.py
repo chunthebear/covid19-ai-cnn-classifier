@@ -15,7 +15,9 @@ import tkinter as tk
 import tkinter.filedialog as fd
 
 # load keras model
+print("\n[INFO] LOARDING TRAINED MODEL......\n")
 model_loaded = keras.models.load_model(os.path.abspath('')+"/model")
+print("\n[INFO] MODEL LOADED! Please select an x-ray image.\n")
 
 root = tk.Tk()
 root.withdraw()
@@ -28,6 +30,6 @@ image = image.reshape(1, image.shape[0], image.shape[1], 1)
 output = model_loaded.predict(image)
 output = int(round(output[0][0]))
 if (output):
-    print("\nCOVID19 detected.\n")
+    print("\nRESULT:  COVID19 detected.\n")
 else:
-    print("\nCOVID19 not detected.\n")
+    print("\nRESULT:  COVID19 not detected.\n")
