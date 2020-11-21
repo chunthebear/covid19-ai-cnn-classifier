@@ -1,0 +1,60 @@
+<!doctype html>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<head>
+  <title>COVID19 Classifier</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<style>
+  .pred-container {
+    margin-bottom: 20px;
+  }
+
+  .pred-container > div {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+  }
+
+  .row {
+    display: table-row;
+  }
+  .cell {
+    display: table-cell;
+    padding-right: 20px;
+  }
+
+  #file-container {
+    margin-bottom: 20px;
+  }
+</style>
+
+<body>
+  <div class="tfjs-container">
+    <section class='title-area'>
+      <h1>COVID19 Classifier</h1>
+    </section>
+
+    <section>
+      <p class='section-head'>Description</p>
+      <p>
+        Created by Yichun Zhao. This prototype tries to classify chest x-ray images to detect COVID19 based on a model trained using Keras and Tensorflow. 
+      </p>
+    </section>
+
+    <section>
+      <p class='section-head'>Output</p>
+
+      <div id="file-container" style="display:block">
+        Upload an image: <input type="file" id="files" name="files[]" multiple />
+      </div>
+
+      <div id="predictions"></div>
+
+    </section>
+
+    <script src="index.js"></script>
+  </div>
+</body>

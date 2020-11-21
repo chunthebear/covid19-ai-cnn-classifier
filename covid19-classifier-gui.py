@@ -1,0 +1,46 @@
+
+# coding: utf-8
+
+# In[17]:
+
+
+# Author: Yichun Zhao
+
+import tensorflow as tf
+from tensorflow import keras
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+import imutils
+import cv2
+
+import tkinter as tk
+import tkinter.filedialog as fd
+
+
+# In[18]:
+
+
+# load keras model
+model_loaded = keras.models.load_model(os.path.abspath('')+"/model")
+
+
+# In[ ]:
+
+
+root = tk.Tk()
+root.withdraw()
+
+file_path = fd.askopenfilename()
+
+#image = cv2.imread(os.path.abspath('')+"/dataset/evaluate/yes/000001-13.jpg", cv2.IMREAD_GRAYSCALE)
+image = cv2.imread(file_path, cv2.IMREAD_GRAYSCALE)
+image = cv2.resize(image, (224, 224))
+image = image.reshape(1, image.shape[0], image.shape[1], 1)
+output = model_loaded.predict(image)
+output = int(round(output[0][0]))
+if (output):
+    print("\nCOVID19 detected.\n")
+else:
+    print("\nCOVID19 not detected.\n")
+
