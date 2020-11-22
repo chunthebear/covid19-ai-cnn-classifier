@@ -1,9 +1,6 @@
 
 # coding: utf-8
 
-# In[1]:
-
-
 # Author: Yichun Zhao
 
 import tensorflow as tf
@@ -13,22 +10,13 @@ import matplotlib.pyplot as plt
 import os
 import imutils
 import cv2
-
 import tkinter as tk
 import tkinter.filedialog as fd
-
-
-# In[7]:
-
 
 # load keras model
 print("\n[INFO] LOARDING TRAINED MODEL......\n")
 model_loaded = keras.models.load_model(os.path.abspath('')+"/model")
 print("\n[INFO] MODEL LOADED! Please select an x-ray image.\n")
-
-
-# In[9]:
-
 
 root = tk.Tk()
 root.withdraw()
@@ -46,4 +34,3 @@ if (output):
     print("\nRESULT:  COVID19 detected.\n")
 else:
     print("\nRESULT:  COVID19 not detected.\n")
-
