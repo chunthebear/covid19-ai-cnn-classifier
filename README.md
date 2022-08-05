@@ -5,3 +5,5 @@
  2. Run covid19-classifier-ui.py to classify a given image.
 
 Please also read the [pdf file](./literature%20review%20and%20prototype.pdf) for a better idea of the classifier, and a literature review of the AI tool. 
+
+(Supervised by Dr. Dillon Chrimes)
